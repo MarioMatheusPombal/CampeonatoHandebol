@@ -17,14 +17,17 @@ public class Partida {
     @JoinColumn(name = "estadio_id")
     private Estadio estadio;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "partida")
-    private List<Time> times = new ArrayList<>();
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "partida")
+    private Time time1;
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "partida")
+    private Time time2;
 
     @Column(name = "pontuacao")
     private int pontosdostimes;
     @ManyToOne
     @JoinColumn(name = "campeonato_id")
     private Campeonato campeonato;
+
 
     public Integer getId() {
         return id;
@@ -50,12 +53,26 @@ public class Partida {
         this.estadio = estadio;
     }
 
-    public List<Time> getTimes() {
-        return times;
+    public Time getTime1() {
+        if (this.time1 == null){
+            this.time1 = new Time();
+        }
+        return time1;
     }
 
-    public void setTimes(List<Time> times) {
-        this.times = times;
+    public void setTime1(Time time1) {
+        this.time1 = time1;
+    }
+
+    public Time getTime2() {
+        if (this.time2 == null){
+            this.time2 = new Time();
+        }
+        return time2;
+    }
+
+    public void setTime2(Time time2) {
+        this.time2 = time2;
     }
 
     public int getPontosdostimes() {
@@ -80,7 +97,8 @@ public class Partida {
                 "id=" + id +
                 ", status='" + status + '\'' +
                 ", estadio=" + estadio +
-                ", times=" + times +
+                ", time1=" + time1 +
+                ", time2=" + time2 +
                 ", pontosdostimes=" + pontosdostimes +
                 ", campeonato=" + campeonato +
                 '}';

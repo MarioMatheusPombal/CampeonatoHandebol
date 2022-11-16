@@ -52,6 +52,7 @@ public class CrudCampeonatoService {
             System.out.println("2 - Atualizar");
             System.out.println("3 - Visualizar");
             System.out.println("4 - Deletar");
+            System.out.println("5 - Buscar nome");
         int action = scanner.nextInt();
 
         switch (action){
@@ -66,6 +67,9 @@ public class CrudCampeonatoService {
                 break;
             case 4:
                 deletar(scanner);
+                break;
+            case 5:
+                buscaCampeonatoNome(scanner);
                 break;
             default:
                 system = false;
@@ -129,6 +133,12 @@ public class CrudCampeonatoService {
         repository.deleteById(id);
         System.out.println("Deletado!!");
     }
+    private void buscaCampeonatoNome(Scanner scanner){
+        System.out.println("Qual nome deseja pesquisar:");
+        String nome = scanner.next();
+        List<Campeonato> list = repository.findByNome(nome);
+        list.forEach(System.out::println);
+    }
 
     private List<Time> times(Scanner scanner) {
         Boolean isTrue = true;
@@ -166,4 +176,8 @@ public class CrudCampeonatoService {
 
         return partidas;
     }
+    public Optional<Campeonato> buscarPorID(int idCamp) {
+        return repository.findById(idCamp);
+    }
+
 }

@@ -14,4 +14,7 @@ import java.util.List;
 public interface PartidaRepository extends CrudRepository<Partida, Integer> {
     @Query("SELECT p FROM Partida p")
     List<Partida> showPartidas();
+
+    //@Query("SELECT p FROM Partida p ORDER BY p.times.pontos")
+    //List<Partida> organziarPartidasClassificacaoTimes();
 }

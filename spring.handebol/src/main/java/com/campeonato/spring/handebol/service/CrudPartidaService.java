@@ -71,15 +71,23 @@ public class CrudPartidaService {
         System.out.println("Id do Estádio: ");
         int num = scanner.nextInt();
 
-        List<Time> times = times(scanner);
-        partida.setTimes(times);
+
+        System.out.println("Id do Primeiro time: ");
+        int id1 = scanner.nextInt();
+        System.out.println("Id do Segundo time: ");
+        int id2 = scanner.nextInt();
 
         Optional<Estadio> estadio = crudEstadioService.buscarPorId(num);
         partida.setEstadio(estadio.get());
+        Optional<Time> time1 = crudTimeService.buscarPorID(id1);
+        partida.setTime1(time1.get());
+        Optional<Time> time2 = crudTimeService.buscarPorID(id2);
+        partida.setTime2(time2.get());
 
         repository.save(partida);
         System.out.println("Salvo!!");
     }
+
 
 
     private void atualizar(Scanner scanner){
@@ -96,16 +104,24 @@ public class CrudPartidaService {
         System.out.println("Id do Estádio: ");
         int num = scanner.nextInt();
 
-        List<Time> times = times(scanner);
-        partida.setTimes(times);
+        System.out.println("Id do Primeiro time: ");
+        int id1 = scanner.nextInt();
+        System.out.println("Id do Segundo time: ");
+        int id2 = scanner.nextInt();
+
 
         Optional<Estadio> estadio = crudEstadioService.buscarPorId(num);
         partida.setEstadio(estadio.get());
+        Optional<Time> time1 = crudTimeService.buscarPorID(id1);
+        partida.setTime1(time1.get());
+        Optional<Time> time2 = crudTimeService.buscarPorID(id2);
+        partida.setTime2(time2.get());
+
 
         repository.save(partida);
         System.out.println("Atualizado!!");
     }
-    private void visualizar(){
+    public void visualizar(){
         List<Partida> list = repository.showPartidas();
         list.forEach(System.out::println);
     }
@@ -134,6 +150,11 @@ public class CrudPartidaService {
         }
 
         return times;
+    }
+    public void visualizarTimes(List<Time> time){
+        for (Time t: time) {
+            System.out.println(t.toString());
+        }
     }
     public Optional<Partida> buscarPorID(int idPartida) {
         return repository.findById(idPartida);

@@ -13,4 +13,12 @@ import java.util.List;
 public interface TimeRepository extends CrudRepository<Time, Integer> {
     @Query("SELECT t FROM Time t")
     List<Time> showTimes();
+
+    @Query("SELECT t FROM Time t ORDER BY t.nome")
+    List<Time> ordenarNomeTimes();
+
+    @Query("SELECT t FROM Time t ORDER BY t.pontos")
+    List<Time> ordenarClassificacaoTimes();
+
+    List<Time> findByNome(String nome);
 }

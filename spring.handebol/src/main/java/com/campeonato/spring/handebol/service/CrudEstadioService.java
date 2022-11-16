@@ -34,6 +34,8 @@ public class CrudEstadioService {
             System.out.println("2 - Atualizar");
             System.out.println("3 - Visualizar");
             System.out.println("4 - Deletar");
+            System.out.println("5 - Buscar nome");
+
         int action = scanner.nextInt();
 
         switch (action){
@@ -48,6 +50,9 @@ public class CrudEstadioService {
                 break;
             case 4:
                 deletar(scanner);
+                break;
+            case 5:
+                buscaEstadioNome(scanner);
                 break;
             default:
                 system = false;
@@ -99,12 +104,8 @@ public class CrudEstadioService {
         System.out.println("Atualizado!!");
     }
     private void visualizar(){
-
         List<Estadio> list = repository.showEstadios();
         list.forEach(System.out::println);
-
-        /*Iterable<Estadio> estadios = repository.findAll();
-        estadios.forEach(estadio -> System.out.println(estadio));*/
     }
 
     private void deletar(Scanner scanner){
