@@ -76,4 +76,6 @@ public class Jogador {
                 ", genero='" + genero + '\'' +
                 '}';
     }
+
+
 }
