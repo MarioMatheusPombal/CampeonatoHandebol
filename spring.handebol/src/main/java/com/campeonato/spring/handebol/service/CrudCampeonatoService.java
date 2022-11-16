@@ -149,7 +149,7 @@ public class CrudCampeonatoService {
             Integer timeId = scanner.nextInt();
 
             if(timeId != 0) {
-                Optional<Time> optionalTime = crudTimeService.buscarPorID(timeId);
+                Optional<Time> optionalTime = timeRepository.findById(timeId);
                 times.add(optionalTime.get());
             } else {
                 isTrue = false;
@@ -167,7 +167,7 @@ public class CrudCampeonatoService {
             Integer partidaId = scanner.nextInt();
 
             if(partidaId != 0) {
-                Optional<Partida> optionalTime = crudPartidaService.buscarPorID(partidaId);
+                Optional<Partida> optionalTime = partidaRepository.findById(partidaId);
                 partidas.add(optionalTime.get());
             } else {
                 isTrue = false;

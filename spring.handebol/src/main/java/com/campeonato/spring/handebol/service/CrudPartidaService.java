@@ -112,9 +112,9 @@ public class CrudPartidaService {
 
         Optional<Estadio> estadio = crudEstadioService.buscarPorId(num);
         partida.setEstadio(estadio.get());
-        Optional<Time> time1 = crudTimeService.buscarPorID(id1);
+        Optional<Time> time1 = timeRepository.findById(id1);
         partida.setTime1(time1.get());
-        Optional<Time> time2 = crudTimeService.buscarPorID(id2);
+        Optional<Time> time2 = timeRepository.findById(id2);
         partida.setTime2(time2.get());
 
 

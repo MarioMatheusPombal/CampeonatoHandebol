@@ -166,7 +166,7 @@ public class CrudTimeService {
             Integer jogadorId = scanner.nextInt();
 
             if(jogadorId != 0) {
-                Optional<Jogador> jogador = jogadorService.buscarPorId(jogadorId);
+                Optional<Jogador> jogador = jogadorRepository.findById(jogadorId);
                 jogadors.add(jogador.get());
             } else {
                 isTrue = false;

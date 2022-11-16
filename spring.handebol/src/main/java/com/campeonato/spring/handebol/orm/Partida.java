@@ -17,9 +17,9 @@ public class Partida {
     @JoinColumn(name = "estadio_id")
     private Estadio estadio;
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "partida")
+    @OneToOne
     private Time time1;
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "partida")
+    @OneToOne
     private Time time2;
 
     @Column(name = "pontuacao")
@@ -54,9 +54,6 @@ public class Partida {
     }
 
     public Time getTime1() {
-        if (this.time1 == null){
-            this.time1 = new Time();
-        }
         return time1;
     }
 
@@ -65,9 +62,6 @@ public class Partida {
     }
 
     public Time getTime2() {
-        if (this.time2 == null){
-            this.time2 = new Time();
-        }
         return time2;
     }
 

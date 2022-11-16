@@ -30,8 +30,7 @@ public class Time {
     @Column(name = "pontuacao")
     private int pontos;
 
-    @ManyToOne
-    @JoinColumn(name = "partida_id")
+    @OneToOne
     private Partida partida;
     @ManyToOne
     @JoinColumn(name = "campeonato_id")
