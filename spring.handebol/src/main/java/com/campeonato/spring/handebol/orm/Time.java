@@ -16,17 +16,6 @@ public class Time {
     @OneToOne
     @JoinColumn(name = "estadio_id")
     private Estadio estadio;
-
-    @OneToOne
-    private Jogador jogador1;
-    @OneToOne
-    private Jogador jogador2;
-    @OneToOne
-    private Jogador jogador3;
-    @OneToOne
-    private Jogador jogador4;
-    @OneToOne
-    private Jogador jogador5;
     @Column(name = "vitorias")
     private int vtr;
     @Column(name = "gols")
@@ -65,46 +54,6 @@ public class Time {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Jogador getJogador1() {
-        return jogador1;
-    }
-
-    public void setJogador1(Jogador jogador1) {
-        this.jogador1 = jogador1;
-    }
-
-    public Jogador getJogador2() {
-        return jogador2;
-    }
-
-    public void setJogador2(Jogador jogador2) {
-        this.jogador2 = jogador2;
-    }
-
-    public Jogador getJogador3() {
-        return jogador3;
-    }
-
-    public void setJogador3(Jogador jogador3) {
-        this.jogador3 = jogador3;
-    }
-
-    public Jogador getJogador4() {
-        return jogador4;
-    }
-
-    public void setJogador4(Jogador jogador4) {
-        this.jogador4 = jogador4;
-    }
-
-    public Jogador getJogador5() {
-        return jogador5;
-    }
-
-    public void setJogador5(Jogador jogador5) {
-        this.jogador5 = jogador5;
     }
 
     public int getVtr() {
@@ -161,11 +110,6 @@ public class Time {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", estadio=" + estadio +
-                ", jogador1=" + jogador1 +
-                ", jogador2=" + jogador2 +
-                ", jogador3=" + jogador3 +
-                ", jogador4=" + jogador4 +
-                ", jogador5=" + jogador5 +
                 ", vtr=" + vtr +
                 ", gols=" + gols +
                 ", empates=" + empates +

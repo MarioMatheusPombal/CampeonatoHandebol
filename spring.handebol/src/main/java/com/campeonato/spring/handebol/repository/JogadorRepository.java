@@ -14,7 +14,9 @@ public interface JogadorRepository extends CrudRepository<Jogador, Integer> {
     @Query("SELECT j FROM Jogador j ORDER BY j.nome")
     List<Jogador> ordenarNomeJogador();
 
-    @Query("SELECT j FROM Jogador j ORDER BY j.time")
+    @Query("SELECT j FROM Jogador j ORDER BY j.time.nome")
     List<Jogador> ordenarTimeJogador();
+
+
 
 }

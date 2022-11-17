@@ -87,10 +87,10 @@ public class RelatoriosService {
                     List<Campeonato> listCTime = campeonatoRepository.ordenarCampTimes();
                     listCTime.forEach(System.out::println);
                     break;
-                /*case 12:
+                case 12:
                     List<Partida> listPtsTimes = partidaRepository.organziarPartidasClassificacaoTimes();
                     listPtsTimes.forEach(System.out::println);
-                    break;*/
+                    break;
                 default:
                     system = false;
                     break;

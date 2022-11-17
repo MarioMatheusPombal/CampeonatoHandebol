@@ -1,9 +1,13 @@
 package com.campeonato.spring.handebol.service;
 
 import com.campeonato.spring.handebol.orm.Jogador;
+import com.campeonato.spring.handebol.orm.Time;
 import com.campeonato.spring.handebol.repository.JogadorRepository;
+import com.campeonato.spring.handebol.repository.TimeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -12,6 +16,8 @@ public class CrudJogadorService {
 
     private boolean system = true;
     private final JogadorRepository repository;
+    @Autowired
+    private TimeRepository timeRepository;
 
     public CrudJogadorService(JogadorRepository repository){
         this.repository = repository;
@@ -69,6 +75,15 @@ public class CrudJogadorService {
         System.out.println("Genero do Jogador: ");
         String genero = scanner.next();
         jogador.setGenero(genero);
+
+        List<Time> times = (List<Time>) timeRepository.findAll();
+        System.out.println("Escolha um time");
+        for (int i = 0; i < times.size(); i++) {
+            System.out.println(" (" + i + ") " + times.get(i).getNome());
+        }
+        System.out.println("Choose do Time: ");
+        jogador.setTime(times.get(scanner.nextInt()));
+
 
         repository.save(jogador);
         System.out.println("Salvo!!");

@@ -84,6 +84,7 @@ public class CrudPartidaService {
         Optional<Time> time2 = crudTimeService.buscarPorID(id2);
         partida.setTime2(time2.get());
 
+        partida.setPontosdostimes(time1.get().getPontos() + time2.get().getPontos());
         repository.save(partida);
         System.out.println("Salvo!!");
     }
@@ -118,6 +119,7 @@ public class CrudPartidaService {
         partida.setTime2(time2.get());
 
 
+        partida.setPontosdostimes(time1.get().getPontos() + time2.get().getPontos());
         repository.save(partida);
         System.out.println("Atualizado!!");
     }

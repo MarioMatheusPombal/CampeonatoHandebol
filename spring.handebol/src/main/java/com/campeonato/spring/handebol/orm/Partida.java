@@ -90,9 +90,9 @@ public class Partida {
         return "Partida{" +
                 "id=" + id +
                 ", status='" + status + '\'' +
-                ", estadio=" + estadio +
-                ", time1=" + time1 +
-                ", time2=" + time2 +
+                ", estadio=" + estadio.getNome() +
+                ", time1=" + time1.getNome() +
+                ", time2=" + time2.getNome() +
                 ", pontosdostimes=" + pontosdostimes +
                 ", campeonato=" + campeonato +
                 '}';

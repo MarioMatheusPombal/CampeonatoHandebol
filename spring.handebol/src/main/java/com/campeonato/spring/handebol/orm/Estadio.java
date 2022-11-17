@@ -47,7 +47,7 @@ public class Estadio{
         return "Estadio{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", endereco=" + endereco.toString() +
+                ", endereco=" + endereco.getCep() +
                 '}';
     }
 }

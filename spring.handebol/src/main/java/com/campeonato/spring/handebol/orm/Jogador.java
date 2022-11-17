@@ -2,9 +2,11 @@ package com.campeonato.spring.handebol.orm;
 
 import jakarta.persistence.*;
 
+import java.util.Comparator;
+
 @Entity
 @Table(name = "jogadores")
-public class Jogador {
+public class Jogador{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -13,6 +15,7 @@ public class Jogador {
     private String dataNt;
     private String altura;
     private String genero;
+
     @ManyToOne
     @JoinColumn(name = "time_id")
     private Time time;
@@ -45,6 +48,14 @@ public class Jogador {
         return dataNt;
     }
 
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
     public void setDataNt(String dataNt) {
         this.dataNt = dataNt;
     }
@@ -74,8 +85,7 @@ public class Jogador {
                 ", dataNt='" + dataNt + '\'' +
                 ", altura='" + altura + '\'' +
                 ", genero='" + genero + '\'' +
+                ", time=" + getTime().getNome() +
                 '}';
     }
-
-
 }

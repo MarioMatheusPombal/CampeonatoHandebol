@@ -84,20 +84,20 @@ public class CrudTimeService {
         System.out.println("Id do Estadio: ");
         int eid = scanner.nextInt();
 
-        System.out.println("Id do Jogador 1: ");
-        int jg1 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 2: ");
-        int jg2 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 3: ");
-        int jg3 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 4: ");
-        int jg4 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 5: ");
-        int jg5 = scanner.nextInt();
+//        System.out.println("Id do Jogador 1: ");
+//        int jg1 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 2: ");
+//        int jg2 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 3: ");
+//        int jg3 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 4: ");
+//        int jg4 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 5: ");
+//        int jg5 = scanner.nextInt();
 
 
         time.setNome(nome);
@@ -107,16 +107,16 @@ public class CrudTimeService {
         int pontuacao = (vtr*2)+emp;
         time.setPontos(pontuacao);
 
-        Optional<Jogador> jogador1 = jogadorRepository.findById(jg1);
-        time.setJogador1(jogador1.get());
-        Optional<Jogador> jogador2 = jogadorRepository.findById(jg2);
-        time.setJogador2(jogador2.get());
-        Optional<Jogador> jogador3 = jogadorRepository.findById(jg3);
-        time.setJogador3(jogador3.get());
-        Optional<Jogador> jogador4 = jogadorRepository.findById(jg4);
-        time.setJogador4(jogador4.get());
-        Optional<Jogador> jogador5 = jogadorRepository.findById(jg5);
-        time.setJogador5(jogador5.get());
+//        Optional<Jogador> jogador1 = jogadorRepository.findById(jg1);
+//        time.setJogador1(jogador1.get());
+//        Optional<Jogador> jogador2 = jogadorRepository.findById(jg2);
+//        time.setJogador2(jogador2.get());
+//        Optional<Jogador> jogador3 = jogadorRepository.findById(jg3);
+//        time.setJogador3(jogador3.get());
+//        Optional<Jogador> jogador4 = jogadorRepository.findById(jg4);
+//        time.setJogador4(jogador4.get());
+//        Optional<Jogador> jogador5 = jogadorRepository.findById(jg5);
+//        time.setJogador5(jogador5.get());
 
         Optional<Estadio> estadio = estadioService.buscarPorId(eid);
         //Optional<Estadio> estadio = estadioRepository.findById(eid);
@@ -153,26 +153,26 @@ public class CrudTimeService {
         System.out.println("Id do Estadio: ");
         int eid = scanner.nextInt();
 
-        System.out.println("Id do Jogador 1: ");
-        int jg1 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 2: ");
-        int jg2 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 3: ");
-        int jg3 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 4: ");
-        int jg4 = scanner.nextInt();
-
-        System.out.println("Id do Jogador 5: ");
-        int jg5 = scanner.nextInt();
+//        System.out.println("Id do Jogador 1: ");
+//        int jg1 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 2: ");
+//        int jg2 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 3: ");
+//        int jg3 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 4: ");
+//        int jg4 = scanner.nextInt();
+//
+//        System.out.println("Id do Jogador 5: ");
+//        int jg5 = scanner.nextInt();
 
         int pontuacao = (vtr*2)+emp;
         time.setPontos(pontuacao);
 
 
-        Optional<Jogador> jogador1 = jogadorRepository.findById(jg1);
+        /*Optional<Jogador> jogador1 = jogadorRepository.findById(jg1);
         time.setJogador1(jogador1.get());
         Optional<Jogador> jogador2 = jogadorRepository.findById(jg2);
         time.setJogador2(jogador2.get());
@@ -181,7 +181,7 @@ public class CrudTimeService {
         Optional<Jogador> jogador4 = jogadorRepository.findById(jg4);
         time.setJogador4(jogador4.get());
         Optional<Jogador> jogador5 = jogadorRepository.findById(jg5);
-        time.setJogador5(jogador5.get());
+        time.setJogador5(jogador5.get());*/
 
 
         Optional<Estadio> estadio = estadioService.buscarPorId(eid);
