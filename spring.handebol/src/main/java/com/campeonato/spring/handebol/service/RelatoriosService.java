@@ -42,6 +42,7 @@ public class RelatoriosService {
             System.out.println("10 - Ordenar Campeonato partidas");
             System.out.println("11 - Ordenar Campeonato times");
             System.out.println("12 - Ordenar Partidas Pontuacao Times");
+            System.out.println("13 - Buscar Partida pela Data");
 
 
             int action = scanner.nextInt();
@@ -91,6 +92,12 @@ public class RelatoriosService {
                     List<Partida> listPtsTimes = partidaRepository.organziarPartidasClassificacaoTimes();
                     listPtsTimes.forEach(System.out::println);
                     break;
+                case 13:
+                    buscaPartidaData(scanner);
+                    break;
+                case 14:
+                    printCamp();
+                    break;
                 default:
                     system = false;
                     break;
@@ -122,6 +129,22 @@ public class RelatoriosService {
         String nome = scanner.next();
         List<Campeonato> list = campeonatoRepository.findByNome(nome);
         list.forEach(System.out::println);
+    }
+    private void buscaPartidaData(Scanner scanner){
+        System.out.println("Qual data deseja pesquisar:");
+        String data = scanner.next();
+        List<Partida> list = partidaRepository.findByData(data);
+        list.forEach(System.out::println);
+    }
+    private void printCamp(){
+        Iterable<Campeonato> list = campeonatoRepository.findAll();
+        for (Campeonato c:list) {
+            System.out.println(c.toString());
+            for (Time t: c.getTimes()) {
+                System.out.println("1");
+                System.out.println(t.getNome());
+            }
+        }
     }
 
 }

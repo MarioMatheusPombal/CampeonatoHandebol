@@ -85,14 +85,16 @@ public class CrudCampeonatoService {
         String nome = scanner.next();
         campeonato.setNome(nome);
 
-        System.out.println("Id do Estádio: ");
-        int num = scanner.nextInt();
+        System.out.println("Digite o id do Time: ");
+        Integer idTime = scanner.nextInt();
 
         List<Time> times = times(scanner);
         campeonato.setTimes(times);
 
         List<Partida> partidas = partidas(scanner);
         campeonato.setPartidas(partidas);
+
+
 
         repository.save(campeonato);
         System.out.println("Salvo!!");
@@ -110,9 +112,6 @@ public class CrudCampeonatoService {
         String nome = scanner.next();
         campeonato.setNome(nome);
 
-        System.out.println("Id do Estádio: ");
-        int num = scanner.nextInt();
-
         List<Time> times = times(scanner);
         campeonato.setTimes(times);
 
@@ -124,7 +123,9 @@ public class CrudCampeonatoService {
     }
     private void visualizar(){
         List<Campeonato> list = repository.showCampeonatos();
+        List<Time> listT = timeRepository.showTimes();
         list.forEach(System.out::println);
+
     }
 
     private void deletar(Scanner scanner){

@@ -21,7 +21,9 @@ public class Campeonato {
     private List<Time> times = new ArrayList<>();
     private String classificacao;
 
+    public Campeonato() {
 
+    }
 
     public Integer getId() {
         return id;
@@ -62,6 +64,20 @@ public class Campeonato {
 
     public void setClassificacao(String classificacao) {
         this.classificacao = classificacao;
+    }
+
+    public void insereTime(Time time){
+        times.add(time);
+    }
+    public void inserePartida(Partida partida){
+        partidas.add(partida);
+    }
+    public String retornaNomeTimes(){
+        String aux = "";
+        for (Time t:times) {
+            aux +=t.getNome();
+        }
+        return aux;
     }
 
     @Override

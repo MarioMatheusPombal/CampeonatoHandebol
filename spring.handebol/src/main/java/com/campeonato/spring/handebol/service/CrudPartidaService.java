@@ -68,9 +68,12 @@ public class CrudPartidaService {
         String stts = scanner.next();
         partida.setStatus(stts);
 
+        System.out.println("Digite a data da Partida: ");
+        String data = scanner.next();
+        partida.setData(data);
+
         System.out.println("Id do Estádio: ");
         int num = scanner.nextInt();
-
 
         System.out.println("Id do Primeiro time: ");
         int id1 = scanner.nextInt();
@@ -101,6 +104,10 @@ public class CrudPartidaService {
         System.out.println("Digite o status da Partida: ");
         String stts = scanner.next();
         partida.setStatus(stts);
+
+        System.out.println("Digite a data da Partida: ");
+        String data = scanner.next();
+        partida.setData(data);
 
         System.out.println("Id do Estádio: ");
         int num = scanner.nextInt();

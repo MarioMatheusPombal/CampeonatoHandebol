@@ -15,6 +15,11 @@ public interface PartidaRepository extends CrudRepository<Partida, Integer> {
     @Query("SELECT p FROM Partida p")
     List<Partida> showPartidas();
 
-    @Query("SELECT p FROM Partida p ORDER BY p.pontosdostimes")
+    @Query("SELECT p FROM Partida p ORDER BY p.pontosdostimes desc")
     List<Partida> organziarPartidasClassificacaoTimes();
+    
+    @Query("SELECT p FROM Partida p ORDER BY p.data")
+    List<Partida> organizarPartidasData();
+
+    List<Partida> findByData(String data);
 }

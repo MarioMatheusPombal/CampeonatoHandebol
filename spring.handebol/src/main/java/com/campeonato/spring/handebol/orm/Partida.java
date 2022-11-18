@@ -17,6 +17,8 @@ public class Partida {
     @JoinColumn(name = "estadio_id")
     private Estadio estadio;
 
+    @Column(name = "data")
+    private String data;
     @OneToOne
     private Time time1;
     @OneToOne
@@ -39,6 +41,14 @@ public class Partida {
 
     public String getStatus() {
         return status;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public void setStatus(String status) {
@@ -95,6 +105,7 @@ public class Partida {
                 ", time2=" + time2.getNome() +
                 ", pontosdostimes=" + pontosdostimes +
                 ", campeonato=" + campeonato +
+                ", data= "+ data+
                 '}';
     }
 }

@@ -22,4 +22,6 @@ public interface CampeonatoRepository extends CrudRepository<Campeonato, Integer
 
     @Query("SELECT c FROM Campeonato c ORDER BY c.times")
     List<Campeonato> ordenarCampTimes();
+
+
 }
